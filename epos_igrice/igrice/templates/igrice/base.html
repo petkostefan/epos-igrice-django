@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+      
+    {% endblock head %}
+    <link rel="stylesheet" href="{% static '/css/pocetna.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="meni">
+        <p><a href="{% url 'pocetna' %}">Početna</a></p>
+        <p><a href="{% url 'memorije' %}">Igra memorije</a></p>
+        <p><a href="{% url 'reakcija' %}">Igra reakcije</a></p>
+        <p><a href="{% url 'brzina' %}">Igra brzine</a></p>
+        <p><a href="{% url 'upitnik' %}">Upitnik</a></p>
+    </div>
+    <div class="meniTelefon">
+        <button class="openbtn" onclick="openNav()">☰</button>
+        <div id="sidepanel" class="sidepanel">
+            <a href="#" class="closebtn" onclick="closeNav()">×</a>
+            <a href="{% url 'pocetna' %}">Početna</a>
+            <a href="{% url 'memorije' %}">Igra memorije</a>
+            <a href="{% url 'reakcija' %}">Igra reakcije</a>
+            <a href="{% url 'brzina' %}">Igra brzine</a>
+            <a href="{% url 'upitnik' %}">Upitnik</a>
+          </div> 
+    </div>
+
+    {% block body %}
+      
+    {% endblock body %}
+    
+    <script src="{% static '/js/pocetna.js' %}"></script>    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{% static '/js/particles.js' %}"></script>
+</body>
+
+</html>

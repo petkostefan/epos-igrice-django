@@ -1,0 +1,25 @@
+{% extends "igrice/base.html" %}
+{% block title %}
+  Pocetna
+{% endblock title %}
+
+{% block body %}
+<h1 class="naslov">Dobro došli na sajt "Kratke igre"</h1>
+<div class="opis">
+<h2>Na ovom sajtu se možete zabaviti dok čekate u redu,pravite pauzu</h2> 
+<h2>u učenju ili radu, ili Vam je jednostavno potrebno malo razonode</h2>
+</div>
+<h1 class="naslov">Trenutno dostupne igre:</h1>
+<div class="igre">
+    <div class="prikaz"><a href="{% url 'memorije' %}"><img src="static/images/memorije.jpg" alt=""></a>
+    <h2>Igra memorije</h2>
+    </div>
+    <div class="prikaz"><a href="{% url 'reakcija' %}"><img src="static/images/reakcije.jpg" alt=""></a>
+    <h2>Igra reakcije</h2>
+    </div></a>
+    <div class="prikaz"><a href="{% url 'brzina' %}"><img src="static/images/klik.jpg" alt=""></a>
+    <h2>Igra brzine</h2>
+    </div></a>
+</div>
+<br><br>
+{% endblock body %}

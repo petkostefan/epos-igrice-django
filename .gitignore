@@ -1,0 +1,5 @@
+epos_igrice_env/
+epos_igrice/epos_igrice/__pycache__/
+epos_igrice/igrice/migrations/__pycache__/
+epos_igrice/igrice/__pycache__/
+.vscode/

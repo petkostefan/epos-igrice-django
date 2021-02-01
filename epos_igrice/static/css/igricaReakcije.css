@@ -1,0 +1,55 @@
+.sadrzaj {
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    width: 60%;
+}
+
+
+#h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}
+
+hr {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    width: 50%;
+}
+
+#igra{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    width: 100%;
+    border: 5px solid white;
+    border-radius: 20px;
+    background-color: rgb(44, 122, 128);
+    margin-top: 100px;
+    text-align: center;
+
+}
+
+h3 {
+    font-size: 20px;
+    color: white;
+}
+
+#btn{
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    text-decoration: none;
+    color: white;
+    border: solid white;
+    background-color: rgb(44, 122, 128);
+    border-radius: 20px;
+    padding: 35px;
+}
+
+@media only screen and (max-width: 700px) {
+    #btn {
+        font-size: 20px;
+    }
+}
