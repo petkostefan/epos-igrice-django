@@ -23,7 +23,8 @@ def memorije(request):
 
 def rezultati(request):
 
-    rezultati = Igrica.objects.all()
-    context = {'rezultati': rezultati}
+    memorije = IgricaMemorije.objects.order_by('vreme', 'pokusaji')[:10]
 
-    return render(request, 'igrice/rezultati.html')
+    context = {'memorije': memorije}
+
+    return render(request, 'igrice/rezultati.html', context)
