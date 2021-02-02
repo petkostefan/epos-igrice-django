@@ -19,7 +19,7 @@
 }
 
 label {
-    padding-bottom: 30px;
+    padding-bottom: px;
 }
 input[type=text] {
     height:30px;
@@ -84,6 +84,11 @@ button[type=submit] {
     cursor: pointer;
     transition: all 0.1s ease-in-out;
   }
+
+form {
+    
+    width: 50%;
+}
 
 .forma{
     text-align: left;

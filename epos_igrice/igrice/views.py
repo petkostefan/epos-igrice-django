@@ -28,3 +28,17 @@ def rezultati(request):
     context = {'memorije': memorije}
 
     return render(request, 'igrice/rezultati.html', context)
+
+def upitnik(request):
+
+    if request.method == 'POST':
+        form = UpitnikForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pocetna')
+    else:
+        form = UpitnikForm()
+
+    context = {'form':form}
+
+    return render(request,'igrice/upitnik.html', context)
