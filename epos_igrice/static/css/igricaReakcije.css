@@ -11,6 +11,13 @@
     font-size: 40px;
 }
 
+.form{
+    background-color: rgb(245, 245, 245);
+    color: black;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+  }
+
 hr {
     font-family: 'Roboto', sans-serif;
     color: white;

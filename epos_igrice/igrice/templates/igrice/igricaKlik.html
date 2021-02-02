@@ -1,51 +1,54 @@
-{% extends "igrice/base.html" %}
-{% load static %}
+{% extends "igrice/base.html" %} {% load static %} {% block head %}
+{% block title %}Igra brzine{% endblock title %}
+<link rel="stylesheet" href="{% static 'css/igricaKlik.css'%}" />
+{% endblock head %} {% block body %}
+<div class="popup" id="popup">
+  <div class="form">
+    <h2 id="naslov_rez"></h2>
+    <h3>Unesite nick:</h3>
+    <form action="" method="post">
+      {% csrf_token %} {{ form }}
+      <input type="submit" value="Potvrdi" />
+    </form>
+  </div>
+</div>
+<div class="igra">
+  <div>
+    <h1>Igra brzine</h1>
+    <p class="uputstvo">
+      Kako biste započeli igricu kliknite na dugme Start,<br />
+      a zatim klikćite na dugme Klikni što više puta. Kada istekne 10 sekundi
+      prikazaće se ostvaren rezultat.
+    </p>
+    <hr id="hr" />
+  </div>
 
-{% block head %}
-    {% block title %}Igra brzine{% endblock title %}
-    <link rel="stylesheet" href="{% static 'css/igricaKlik.css'%}">
-   {% endblock head %}
-
-  {% block body %}
-    <div class="igra">
-      <div>
-        <h1>Igra brzine</h1>
-        <p class="uputstvo">
-          Kako biste započeli igricu kliknite na dugme Start,<br />
-          a zatim klikćite na dugme Klikni što više puta. Kada istekne 10
-          sekundi prikazaće se ostvaren rezultat.
-        </p>
-        <hr id="hr" />
+  <div class="conteiner">
+    <div class="prviRed">
+      <div class="start">
+        <button id="start">START</button>
       </div>
 
-      
-      <div class="conteiner">
-        <div class="prviRed">
-          <div class="start">
-            <button id="start">START</button>
-          </div>
-
-          <div class="tajmer">
-            <p id="vreme">Vreme:</p>
-            <p id="brSek">10</p>
-            <p id="s">s</p>
-          </div>
-        </div>
-
-        <div class="drugiRed">
-          <div class="dugme">
-            <button id="btn" onclick="brojanje()">KLIKNI</button>
-          </div>
-
-          <div class="brojac">
-            <p>Broj klikova:</p>
-            <p id="broj">0</p>
-          </div>
-        </div>
+      <div class="tajmer">
+        <p id="vreme">Vreme:</p>
+        <p id="brSek">10</p>
+        <p id="s">s</p>
       </div>
     </div>
 
-    <script src="{% static '/js/igricaKlik.js' %}"</script>
-    
-      {% endblock body %}}
-   
+    <div class="drugiRed">
+      <div class="dugme">
+        <button id="btn" onclick="brojanje()">KLIKNI</button>
+      </div>
+
+      <div class="brojac">
+        <p>Broj klikova:</p>
+        <p id="broj">0</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static '/js/igricaKlik.js' %}"></script>
+
+{% endblock body %}

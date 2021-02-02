@@ -14,6 +14,20 @@ canvas{
     display: block; 
 }
 
+.popup{
+    text-shadow: none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10; 
+  }
+
 .tabela{
     margin: 1% 20% 0 20%;
     background-color: rgba(255, 255, 255, 0.123);

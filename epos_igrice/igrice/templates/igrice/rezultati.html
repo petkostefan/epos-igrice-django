@@ -10,8 +10,8 @@
 
 {% block body %}
 <h1 style="margin-top: 3%;">Rezultati</h1>
-<div class="d-flex justify-content-right">
-  <table class="table text-white tabela">
+<div class="d-flex flex-column align-items-center justify-content-right">
+  <table class="table text-white tabela" style="width: 70%;">
     <thead>
       <tr>
         <th scope="col">Pozicija</th>
@@ -31,5 +31,44 @@
       {% endfor %}
     </tbody>
   </table>
+  <br><br><br>
+  <table class="table text-white tabela" style="width: 70%;">
+    <thead>
+      <tr>
+        <th scope="col">Pozicija</th>
+        <th scope="col">Nick</th>
+        <th scope="col">Vreme</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rezultat in reakcija %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ rezultat.nick }}</td>
+        <td>{{ rezultat.vreme }}</td>             
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br><br><br>
+  <table class="table text-white tabela" style="width: 70%;">
+    <thead>
+      <tr>
+        <th scope="col">Pozicija</th>
+        <th scope="col">Nick</th>
+        <th scope="col">Broj klikova</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rezultat in brzina %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ rezultat.nick }}</td>
+        <td>{{ rezultat.klikovi }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br><br><br>
 </div>
 {% endblock body %}

@@ -29,7 +29,7 @@ def reakcija(request):
             form.save()
             return redirect('rezultati')
     else:
-        form = reakcija()
+        form = ReakcijaForm()
 
     context = {'form':form}
 
@@ -52,8 +52,11 @@ def brzina(request):
 def rezultati(request):
 
     memorije = IgricaMemorije.objects.order_by('vreme', 'pokusaji')[:10]
+    reakcija = IgricaReakcije.objects.order_by('vreme')[:10]
+    brzina = IgricaBrzine.objects.order_by('klikovi')[:10]
 
-    context = {'memorije': memorije}
+
+    context = {'memorije': memorije, 'reakcija':reakcija, 'brzina':brzina}
 
     return render(request, 'igrice/rezultati.html', context)
 

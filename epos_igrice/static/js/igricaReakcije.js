@@ -53,5 +53,7 @@ function stop(){
       lab.style.display = "none";
     }
 
+    popup.style.display = "flex";
+
 
 }
