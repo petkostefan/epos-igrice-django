@@ -3,13 +3,7 @@ from django.db import models
 
 class IgricaMemorije(models.Model):
 
-    IGRICE = (
-    ('Memorija', 'Memorija'),
-    ('Reakcija', 'Reakcija'),
-    ('Brzina', 'Brzina'),
-    )
-
-    nick = models.CharField(max_length=30)
+    nick = models.CharField(max_length=30, l)
     pokusaji = models.IntegerField()
     vreme = models.FloatField()
 
@@ -18,3 +12,4 @@ class IgricaMemorije(models.Model):
 
     class Meta():
         verbose_name_plural = 'Igrice memorije'
+
