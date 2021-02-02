@@ -98,7 +98,6 @@ function resetBoard() {
     }
 
     popup.style.display = "flex";
-    console.log("Kraj buraz");
   }
 }
 

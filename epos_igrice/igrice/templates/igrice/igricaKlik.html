@@ -1,87 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Igra brzine</title>
-    <link rel="stylesheet" href="css/pocetna.css">
-    <link rel="stylesheet" href="css/igricaKlik.css"> 
-</head>
-<body>
+    <link rel="stylesheet" href="css/pocetna.css" />
+    <link rel="stylesheet" href="css/igricaKlik.css" />
+  </head>
+  <body>
     <div id="particles-js"></div>
 
     <div class="meni">
-        <p><a href="index.html">Početna</a></p>
-        <p><a href="memorije.html">Igra memorije</a></p>
-        <p><a href="igricaReakcije.html">Igra reakcije</a></p>
-        <p><a href="igricaKlik.html">Igra brzine</a></p>
-        <p><a href="upitnik.html">Upitnik</a></p>
+      <p><a href="index.html">Početna</a></p>
+      <p><a href="memorije.html">Igra memorije</a></p>
+      <p><a href="igricaReakcije.html">Igra reakcije</a></p>
+      <p><a href="igricaKlik.html">Igra brzine</a></p>
+      <p><a href="upitnik.html">Upitnik</a></p>
     </div>
     <div class="meniTelefon">
-        <button class="openbtn" onclick="openNav()">☰</button>
-        <div id="sidepanel" class="sidepanel">
-            <a href="#" class="closebtn" onclick="closeNav()">×</a>
-            <a href="index.html">Početna</a>
-            <a href="memorije.html">Igra memorije</a>
-            <a href="igricaReakcije.html">Igra reakcije</a>
-            <a href="igricaKlik.html">Igra brzine</a>
-            <a href="upitnik.html">Upitnik</a>
-          </div> 
+      <button class="openbtn" onclick="openNav()">☰</button>
+      <div id="sidepanel" class="sidepanel">
+        <a href="#" class="closebtn" onclick="closeNav()">×</a>
+        <a href="index.html">Početna</a>
+        <a href="memorije.html">Igra memorije</a>
+        <a href="igricaReakcije.html">Igra reakcije</a>
+        <a href="igricaKlik.html">Igra brzine</a>
+        <a href="upitnik.html">Upitnik</a>
+      </div>
     </div>
 
     <div class="igra">
-        <div>
-            <h1>Igra brzine</h1>
-            <p class="uputstvo">Kako biste započeli igricu kliknite na dugme Start,<br>
-                a zatim klikćite na dugme Klikni što više puta. Kada istekne
-                10 sekundi prikazaće se ostvaren rezultat.
-            </p>
-            <hr id="hr">
+      <div>
+        <h1>Igra brzine</h1>
+        <p class="uputstvo">
+          Kako biste započeli igricu kliknite na dugme Start,<br />
+          a zatim klikćite na dugme Klikni što više puta. Kada istekne 10
+          sekundi prikazaće se ostvaren rezultat.
+        </p>
+        <hr id="hr" />
+      </div>
+
+      <div class="conteiner">
+        <div class="prviRed">
+          <div class="start">
+            <button id="start">START</button>
+          </div>
+
+          <div class="tajmer">
+            <p id="vreme">Vreme:</p>
+            <p id="brSek">10</p>
+            <p id="s">s</p>
+          </div>
         </div>
 
-       
+        <div class="drugiRed">
+          <div class="dugme">
+            <button id="btn" onclick="brojanje()">KLIKNI</button>
+          </div>
 
-        <div class="conteiner">
-            <div class="prviRed">
-                <div class="start" >
-                    <button id="start">START</button>
-                </div>
-
-                <div class="tajmer">
-    
-                    <p id="vreme">Vreme: </p>
-                    <p id="brSek">10</p>
-                    <p id="s">s</p>
-                </div>
-            </div>
-
-            <div class="drugiRed">
-                
-                <div class="dugme">
-                    <button id="btn"  onclick="brojanje()">KLIKNI</button>
-                </div>
-
-                <div class="brojac">
-    
-                    <p>Broj klikova: </p>
-                    <p id="broj">0</p>
-        
-                </div>
-    
-            </div>
-
-            
-            
-    
-    
-            
+          <div class="brojac">
+            <p>Broj klikova:</p>
+            <p id="broj">0</p>
+          </div>
         </div>
+      </div>
     </div>
-    
 
     <script src="js/igricaKlik.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/particles.js"></script>
-    <script src="js/pocetna.js"></script>    
-</body>
+    <script src="js/pocetna.js"></script>
+  </body>
 </html>
