@@ -1,7 +1,11 @@
-{% extends "igrice/base.html" %} {% load static %} {% block head %}
+{% extends "igrice/base.html" %} {% load static %}
+ 
+
 {% block title %}Igra brzine{% endblock title %}
+{% block head %}
 <link rel="stylesheet" href="{% static 'css/igricaKlik.css'%}" />
-{% endblock head %} {% block body %}
+{% endblock head %}
+ {% block body %}
 <div class="popup" id="popup">
   <div class="form">
     <h2 id="naslov_rez"></h2>
@@ -20,7 +24,7 @@
       a zatim klikćite na dugme Klikni što više puta. Kada istekne 10 sekundi
       prikazaće se ostvaren rezultat.
     </p>
-    <hr id="hr" />
+    
   </div>
 
   <div class="conteiner">
