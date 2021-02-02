@@ -1,34 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Igra brzine</title>
-    <link rel="stylesheet" href="css/pocetna.css" />
-    <link rel="stylesheet" href="css/igricaKlik.css" />
-  </head>
-  <body>
-    <div id="particles-js"></div>
+{% extends "igrice/base.html" %}
+{% load static %}
 
-    <div class="meni">
-      <p><a href="index.html">Početna</a></p>
-      <p><a href="memorije.html">Igra memorije</a></p>
-      <p><a href="igricaReakcije.html">Igra reakcije</a></p>
-      <p><a href="igricaKlik.html">Igra brzine</a></p>
-      <p><a href="upitnik.html">Upitnik</a></p>
-    </div>
-    <div class="meniTelefon">
-      <button class="openbtn" onclick="openNav()">☰</button>
-      <div id="sidepanel" class="sidepanel">
-        <a href="#" class="closebtn" onclick="closeNav()">×</a>
-        <a href="index.html">Početna</a>
-        <a href="memorije.html">Igra memorije</a>
-        <a href="igricaReakcije.html">Igra reakcije</a>
-        <a href="igricaKlik.html">Igra brzine</a>
-        <a href="upitnik.html">Upitnik</a>
-      </div>
-    </div>
+{% block head %}
+    {% block title %}Igra brzine{% endblock title %}
+    <link rel="stylesheet" href="{% static 'css/igricaKlik.css'%}">
+   {% endblock head %}
 
+  {% block body %}
     <div class="igra">
       <div>
         <h1>Igra brzine</h1>
@@ -40,6 +18,7 @@
         <hr id="hr" />
       </div>
 
+      
       <div class="conteiner">
         <div class="prviRed">
           <div class="start">
@@ -66,9 +45,7 @@
       </div>
     </div>
 
-    <script src="js/igricaKlik.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/pocetna.js"></script>
-  </body>
-</html>
+    <script src="{% static '/js/igricaKlik.js' %}"</script>
+    
+      {% endblock body %}}
+   
