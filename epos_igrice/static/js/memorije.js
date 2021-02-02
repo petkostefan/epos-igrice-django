@@ -92,9 +92,9 @@ function resetBoard() {
     labels = document.getElementsByTagName("label");
     for (let i = 0; i < labels.length; i++) {
       const lab = labels[i];
-      if(lab.innerHTML == "Pokusaji:" || lab.innerHTML == "Vreme:"){
-        lab.style.display = "none";
-      }
+      lab.style.display = "none";
+      // if(lab.innerHTML == "Pokusaji:" || lab.innerHTML == "Vreme:"){
+      // }
     }
 
     popup.style.display = "flex";

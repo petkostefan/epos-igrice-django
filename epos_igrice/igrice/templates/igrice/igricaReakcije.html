@@ -1,59 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Igra reakcije</title>
-    <link rel="stylesheet" href="css/pocetna.css">
-    <link rel="stylesheet" href="css/igricaReakcije.css">
-</head>
-
-<body>
-    <div id="particles-js"></div>
-    <div class="meni">
-        <p><a href="index.html">Početna</a></p>
-        <p><a href="memorije.html">Igra memorije</a></p>
-        <p><a href="igricaReakcije.html">Igra reakcije</a></p>
-        <p><a href="igricaKlik.html">Igra brzine</a></p>
-        <p><a href="upitnik.html">Upitnik</a></p>
+{% extends "igrice/base.html" %} {% load static %} {% load crispy_forms_tags %}
+{% block head %}
+<link rel="stylesheet" href="{% static '/css/igricaReakcije.css' %}" />
+{% endblock head %} {% block title %} Memorije {% endblock title %}
+{% block body %}
+<div class="popup" id="popup">
+    <div class="form">
+        <h2 id="naslov_rez"></h2>
+        <h3>Unesite nick:</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Potvrdi">
+        </form>
     </div>
-    <div class="meniTelefon">
-        <button class="openbtn" onclick="openNav()">☰</button>
-        <div id="sidepanel" class="sidepanel">
-            <a href="#" class="closebtn" onclick="closeNav()">×</a>
-            <a href="index.html">Početna</a>
-            <a href="memorije.html">Igra memorije</a>
-            <a href="igricaReakcije.html">Igra reakcije</a>
-            <a href="igricaKlik.html">Igra brzine</a>
-            <a href="upitnik.html">Upitnik</a>
-        </div>
-    </div>
-    <div class="sadrzaj">
-        <h1 id="h1">Igra reakcije</h1> 
-        <p>Kako biste započeli igricu kliknite na tekst
-            “prvo kliknite ovde i sačekajte crvenu pozadinu”.
-            Zatim, kada pozadina postane crvena potrebno 
-            je da u što kraćem vremenskom periodu kliknete 
-            na dugme Klikni. Tada će se prikazati vaš rezultat. 
-            Što pre kliknete, rezultat će biti bolji.
-        </p>
-        <hr>
-        
-        <div id="igra">
-            <div id="text">
-                
-                <h3 id="tekst">Prvo kliknite ovde i sacekajte crvenu pozadinu.</h3><br>
-            </div>
-            <div class="dugme">
-                <button id="btn" onclick="stop()">KLIKNI</button>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/igricaReakcije.js"></script>
-    <script src="js/pocetna.js"></script>
-</body>
+</div>
+<div class="sadrzaj">
+  <h1 id="h1">Igra reakcije</h1>
+  <p>
+    Kako biste započeli igricu kliknite na tekst “prvo kliknite ovde i sačekajte
+    crvenu pozadinu”. Zatim, kada pozadina postane crvena potrebno je da u što
+    kraćem vremenskom periodu kliknete na dugme Klikni. Tada će se prikazati vaš
+    rezultat. Što pre kliknete, rezultat će biti bolji.
+  </p>
+  <hr />
 
-</html>
+  <div id="igra">
+    <div id="text">
+      <h3 id="tekst">Prvo kliknite ovde i sacekajte crvenu pozadinu.</h3>
+      <br />
+    </div>
+    <div class="dugme">
+      <button id="btn" onclick="stop()">KLIKNI</button>
+    </div>
+  </div>
+</div>
+<script src="{% static '/js/igricaReakcije.js' %}"></script>
+{% endblock body %}

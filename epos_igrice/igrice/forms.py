@@ -1,7 +1,7 @@
 from django.forms import ModelForm
 from .models import *
 
-class RezulatForm(ModelForm):
+class MemorijaForm(ModelForm):
 
     class Meta:
         model = IgricaMemorije
@@ -11,4 +11,16 @@ class UpitnikForm(ModelForm):
     
     class Meta: 
         model = Upitnik
+        fields = '__all__'
+
+class ReakcijaForm(ModelForm):
+    
+    class Meta: 
+        model = IgricaReakcije
+        fields = '__all__'
+
+class BrzinaForm(ModelForm):
+    
+    class Meta: 
+        model = IgricaBrzine
         fields = '__all__'

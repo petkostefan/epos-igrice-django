@@ -1,4 +1,8 @@
 document.getElementById("btn").disabled = true; 
+let popup = document.getElementById("popup");
+let forma_vreme = document.getElementById("id_vreme")
+let naslov_rez = document.getElementById("naslov_rez")
+
 
 function cekanjeCrvene(){
     document.getElementById('tekst').innerHTML = "Sacekajte crvenu pozadinu";
@@ -36,6 +40,18 @@ function stoperica(){
 }
 
 function stop(){
-    alert('Vas rezultat: ' + miliSekunde);
+    // alert('Vas rezultat: ' + miliSekunde);
     document.getElementById("btn").disabled = true; 
+
+    naslov_rez.innerHTML = "Vaš rezultat: "+miliSekunde
+    forma_vreme.value = miliSekunde;
+
+    forma_vreme.style.display = "none";
+    labels = document.getElementsByTagName("label");
+    for (let i = 0; i < labels.length; i++) {
+      const lab = labels[i];
+      lab.style.display = "none";
+    }
+
+
 }

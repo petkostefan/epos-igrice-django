@@ -10,16 +10,44 @@ def pocetna(request):
 def memorije(request):
 
     if request.method == 'POST':
-        form = RezulatForm(request.POST)
+        form = MemorijaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('pocetna')
+            return redirect('rezultati')
     else:
-        form = RezulatForm()
+        form = MemorijaForm()
 
     context = {'form':form}
 
     return render(request,'igrice/memorije.html', context)
+
+def reakcija(request):
+
+    if request.method == 'POST':
+        form = ReakcijaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('rezultati')
+    else:
+        form = reakcija()
+
+    context = {'form':form}
+
+    return render(request,'igrice/igricaReakcije.html', context)
+
+def brzina(request):
+
+    if request.method == 'POST':
+        form = BrzinaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('rezultati')
+    else:
+        form = BrzinaForm()
+
+    context = {'form':form}
+
+    return render(request,'igrice/igricaKlik.html', context)
 
 def rezultati(request):
 

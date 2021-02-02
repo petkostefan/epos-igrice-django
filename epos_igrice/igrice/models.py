@@ -4,7 +4,7 @@ from django import forms
 
 class IgricaMemorije(models.Model):
 
-    nick = models.CharField(max_length=30, l)
+    nick = models.CharField(max_length=30)
     pokusaji = models.IntegerField()
     vreme = models.FloatField()
 
@@ -13,6 +13,28 @@ class IgricaMemorije(models.Model):
 
     class Meta():
         verbose_name_plural = 'Igrice memorije'
+
+class IgricaReakcije(models.Model):
+
+    nick = models.CharField(max_length=30)
+    vreme = models.FloatField()
+
+    def __str__(self):
+        return self.nick+' '+str(self.vreme)
+
+    class Meta():
+        verbose_name_plural = 'Igrice reakcije'
+
+class IgricaBrzine(models.Model):
+
+    nick = models.CharField(max_length=30)
+    klikovi = models.IntegerField()
+
+    def __str__(self):
+        return self.nick+' '+str(self.klikovi)
+
+    class Meta():
+        verbose_name_plural = 'Igrice brzine'
 
 class Upitnik(models.Model):
     ime_i_prezime = models.CharField(max_length=40)
