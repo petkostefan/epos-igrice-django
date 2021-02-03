@@ -9,9 +9,15 @@
 {% endblock title %}
 
 {% block body %}
-<h1 style="margin-top: 3%;">Rezultati</h1>
-<div class="d-flex flex-column align-items-center justify-content-right">
-  <table class="table text-white tabela" style="width: 70%;">
+<h1 class="mt-4 mb-4">Rezultati</h1>
+<div class="d-flex justify-content-center"></div>
+<button type="button" class="btn btn-light m-2 mb-4" onclick="memorije()" id="btn_memorije">Memorije top 10</button>
+<button type="button" class="btn btn-light m-2 mb-4" onclick="reakcija()" id="btn_reakcija">Reakcija top 10</button>
+<button type="button" class="btn btn-light m-2 mb-4" onclick="brzina();" id="btn_brzina">Brzina top 10</button>
+
+<h3 id="naslov" >Igrica memorije top 10</h3>
+<div class="d-flex align-items-center">
+  <table class="table text-white tabela" id="memorije" style="width: 70%;">
     <thead>
       <tr>
         <th scope="col">Pozicija</th>
@@ -32,7 +38,7 @@
     </tbody>
   </table>
   <br><br><br>
-  <table class="table text-white tabela" style="width: 70%;">
+  <table class="table text-white tabela" id="reakcija" style="width: 70%;">
     <thead>
       <tr>
         <th scope="col">Pozicija</th>
@@ -51,7 +57,7 @@
     </tbody>
   </table>
   <br><br><br>
-  <table class="table text-white tabela" style="width: 70%;">
+  <table class="table text-white tabela" id="brzina" style="width: 70%;">
     <thead>
       <tr>
         <th scope="col">Pozicija</th>
@@ -71,4 +77,5 @@
   </table>
   <br><br><br>
 </div>
+<script src="{% static '/js/rezultati.js' %}"></script>
 {% endblock body %}

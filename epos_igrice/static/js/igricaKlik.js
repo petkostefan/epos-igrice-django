@@ -5,10 +5,12 @@ let forma_klikovi = document.getElementById("id_klikovi")
 let naslov_rez = document.getElementById("naslov_rez")
 var sekunde = 10;
 var brojac = 0;
+document.getElementById("btn").disabled = true; 
 
 
 function odbrojavanje(){
     document.getElementById("start").disabled = true; 
+    document.getElementById("btn").disabled = false; 
     setInterval( function(){
         sekunde--;
             
