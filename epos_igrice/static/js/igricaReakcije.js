@@ -1,11 +1,12 @@
-document.getElementById("btn").disabled = true; 
 let popup = document.getElementById("popup");
 let forma_vreme = document.getElementById("id_vreme")
 let naslov_rez = document.getElementById("naslov_rez")
+let starovano = false;
 
 
 function cekanjeCrvene(){
     document.getElementById('tekst').innerHTML = "Sacekajte crvenu pozadinu";
+    starovano = true;
     odbrojavanje();
 }
 
@@ -40,8 +41,10 @@ function stoperica(){
 }
 
 function stop(){
-    // alert('Vas rezultat: ' + miliSekunde);
-    document.getElementById("btn").disabled = true; 
+
+    if(miliSekunde == 0){
+        return;
+    }
 
     naslov_rez.innerHTML = "Vaš rezultat: "+miliSekunde
     forma_vreme.value = miliSekunde;

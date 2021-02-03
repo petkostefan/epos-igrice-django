@@ -53,7 +53,7 @@ def rezultati(request):
 
     memorije = IgricaMemorije.objects.order_by('vreme', 'pokusaji')[:10]
     reakcija = IgricaReakcije.objects.order_by('vreme')[:10]
-    brzina = IgricaBrzine.objects.order_by('klikovi')[:10]
+    brzina = IgricaBrzine.objects.order_by('-klikovi')[:10]
 
 
     context = {'memorije': memorije, 'reakcija':reakcija, 'brzina':brzina}
